@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ánimo, Amor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-pink-100 text-pink-500 text-center overflow-hidden">
+    <header class="mt-10">
+        <h1 class="text-4xl">Ánimo, mi amor</h1>
+        <p class="mt-4">Espero que te recuperes pronto, mientras tanto, ¡disfruta estos juegos!</p>
+    </header>
+
+    <section id="juegos" class="flex justify-around mt-10">
+        <div class="juego bg-pink-50 border-2 border-pink-300 rounded-lg p-5 w-1/3 relative" id="juego1">
+            <h2 class="text-2xl">Adivina el número</h2>
+            <p class="mt-2">Intenta adivinar el número entre 1 y 10</p>
+            <input type="number" id="inputNum" class="mt-2 border-2 border-pink-300 rounded px-2" min="1" max="10">
+            <button class="mt-2 bg-pink-300 text-white px-4 py-2 rounded" onclick="adivinaNumero()">Adivina</button>
+            <p id="resultadoJuego1" class="mt-2"></p>
+            <div id="confetti" class="absolute inset-0 pointer-events-none"></div>
+            <div id="beso" class="absolute"></div>
+        </div>
+        <div class="juego bg-pink-50 border-2 border-pink-300 rounded-lg p-5 w-1/3 relative" id="juego2">
+            <h2 class="text-2xl">Piedra, Papel o Tijera</h2>
+            <div id="opcionesJuego2" class="mt-2 flex justify-center space-x-4">
+                <button class="bg-pink-300 text-white px-4 py-2 rounded" onclick="jugarPiedra()">Piedra</button>
+                <button class="bg-pink-300 text-white px-4 py-2 rounded" onclick="jugarPapel()">Papel</button>
+                <button class="bg-pink-300 text-white px-4 py-2 rounded" onclick="jugarTijera()">Tijera</button>
+            </div>
+            <p id="resultadoJuego2" class="mt-2"></p>
+            <p id="contadorJuego2" class="mt-2">Victorias: 0 | Derrotas: 0</p>
+        </div>
+        <div class="juego bg-pink-50 border-2 border-pink-300 rounded-lg p-5 w-1/3" id="juego3">
+            <h2 class="text-2xl">Tic Tac Toe</h2>
+            <div id="ticTacToe" class="mt-2 grid grid-cols-3 gap-2">
+                <!-- Celdas del tablero -->
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="0"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="1"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="2"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="3"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="4"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="5"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="6"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="7"></div>
+                <div class="celda border-2 border-pink-300 flex items-center justify-center text-4xl cursor-pointer" data-index="8"></div>
+            </div>
+            <p id="resultadoJuego3" class="mt-2"></p>
+            <p id="contadorJuego3" class="mt-2">Victorias: 0 | Derrotas: 0</p>
+        </div>
+    </section>
+
+    <section id="decoraciones">
+        <div class="corazones mt-10"></div>
+    </section>
+
+    <section id="ambulancia" class="absolute bottom-10 right-10">
+        <div id="ambulanciaDiv" class="w-10 h-10 bg-white border-2 border-pink-300 rounded-full flex items-center justify-center cursor-pointer animate-moverAmbulancia">
+            🚑
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

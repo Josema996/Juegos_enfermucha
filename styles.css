@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes corazonesFlotantes {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes moverAmbulancia {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-300px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes besoAnimacion {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+@keyframes animacionJuego2 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#confetti {
+    display: none;
+    background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTl1bnEwbWw3YWhxMnNubTRocDRrdnI4MnUycXEyMHduZXUwNWo4NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT77XYfBvO9i2or9Li/giphy.webp') center/cover no-repeat;
+}
+
+#beso {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXZidmV6N2pzbGRzbzFtYnZ0c2p6ZHFjeWd1dWxjM2w0dzI1MzJ0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9DPLt3xSOCDP33tS/giphy.webp') center/cover no-repeat;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    animation: besoAnimacion 1s ease-in-out forwards;
+}
+
+button.animate {
+    animation: animacionJuego2 0.5s ease-in-out;
+}
+
+.celda {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.celda.x::after {
+    content: "X";
+}
+
+.celda.o::after {
+    content: "O";
+}
+
